@@ -1,5 +1,5 @@
 ### CREATE
-POST http://localhost:8080/api/clients/
+POST http://localhost:8080/api/clients/create
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 GET http://localhost:8080/api/clients/1
 
 ### UPDATE
-PUT http://localhost:8080/api/clients/1
+PUT http://localhost:8080/api/clients/update/1
 Content-Type: application/json
 
 {
@@ -24,4 +24,4 @@ Content-Type: application/json
 }
 
 ### DELETE
-DELETE http://localhost:8080/api/clients/11
+DELETE http://localhost:8080/api/clients/del/2

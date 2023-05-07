@@ -13,19 +13,12 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 public class TypeDTO {
-
-
     private Long id;
     @Schema(description = "product type",example = "CC")
-
     private String productType;
-
     @Schema(description = "product name", example = "credit card")
     @JsonValue // representation of object in Json
     private String productName;
-
-
-    @JsonIgnore
     @Schema(description = "add date", example = "2023-05-01")
     private LocalDate creationDate;
 

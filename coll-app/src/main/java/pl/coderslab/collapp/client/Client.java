@@ -1,18 +1,13 @@
 package pl.coderslab.collapp.client;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.coderslab.collapp.product.Product;
-import pl.coderslab.collapp.product.ProductDTO;
-import pl.coderslab.collapp.type.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,13 +37,10 @@ public class Client {
     private String email;
     private Integer phoneNumber;
 
-
     // relation
-/*
-    @NotNull
-    @OneToMany(mappedBy = "client")
+    @NotBlank
+    @OneToMany
+    @JoinColumn(name = "client_id")
     private List<Product> productList = new ArrayList<>();
-*/
-
 
 }

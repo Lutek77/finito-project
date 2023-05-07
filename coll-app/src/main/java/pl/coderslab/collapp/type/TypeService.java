@@ -35,7 +35,7 @@ public class TypeService {
             throw new IdMismatchException("Id's mismatch");
         }
         if (!typeRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Client doesn't exist");
+            throw new ResourceNotFoundException("Type doesn't exist");
         }
 
         Type type = typeMapper.mapToEntity(typeDTO);
@@ -43,11 +43,6 @@ public class TypeService {
         return typeMapper.mapToDTO(type);
 
 
-    }
-
-    // delete
-    public void deleteById(Long id){
-        typeRepository.deleteById(id);
     }
 
 

@@ -30,7 +30,7 @@ public class ClientService {
 
     public ClientDTO addClient (ClientDTO clientDTO){
         Client client = clientMapper.mapToEntity(clientDTO);
-        Assert.isNull(client.getId(), "not null");
+        Assert.isNull(client.getId(), "Id must be null");
         clientRepository.save(client);
         return clientMapper.mapToDTO(client);
     }

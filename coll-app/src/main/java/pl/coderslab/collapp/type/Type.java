@@ -18,20 +18,14 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Table(name = "types")
 public class Type {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
-
     @NotBlank(message = "cannot be blank")
     private String productType;
     @NotBlank
-
     private String productName;
     @NotBlank
     private LocalDate creationDate;
-
-
 
 }

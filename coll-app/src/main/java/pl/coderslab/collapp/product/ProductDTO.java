@@ -23,7 +23,6 @@ public class ProductDTO {
     @Schema(description = "account number", example = "29105010501111222251301234")
     private String iban;
 
-
     private DetailDTO detail;
     private TypeDTO type;
 

@@ -17,6 +17,7 @@ public interface ClientRepository extends JpaRepository <Client, Long> {
     @Query(value = "delete from clients where id = ?1", nativeQuery = true)
     int deleteClientsById (Long id);
 
+    // simpler solution
    /* Client deleteClientBy(Long id);*/
 
 }

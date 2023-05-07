@@ -9,6 +9,7 @@ import pl.coderslab.collapp.type.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.List;
 
 @Entity
 @Getter
@@ -30,14 +31,16 @@ public class Product {
     private String iban;
 
     // relation
- /*   @NotBlank
-    @ManyToOne
-    private Client client;*/
 
     @NotBlank
     @OneToOne // one direction
     @JoinColumn(name = "agreement_id")
     private Detail detail;
+
+    @NotBlank
+    @OneToMany// one direction
+    @JoinColumn(name = "agreement_id")
+    private List<Detail> detailList;
 
     @NotBlank
     @OneToOne // one direction

@@ -15,16 +15,14 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-
-
     @Operation(summary = "add new client")
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<ClientDTO> addClient(@RequestBody @Valid ClientDTO client){
         ClientDTO clientDTO = clientService.addClient(client);
         return ResponseEntity.ok(clientDTO);
     }
 
-    @Operation(summary = "Find client by id",  description = "Returns single Client")
+    @Operation(summary = "Find client by id with products",  description = "Returns single Client")
     @GetMapping("/{id}")
     public ResponseEntity <ClientDTO> getById (@PathVariable Long id){
         ClientDTO client = clientService.getById(id);
@@ -32,7 +30,7 @@ public class ClientController {
 
     }
     @Operation(summary = "update client")
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<ClientDTO> updateClient (
             @PathVariable Long id, @RequestBody @Valid ClientDTO client){
         ClientDTO clientDTO = clientService.updateClient(id, client);
@@ -41,7 +39,7 @@ public class ClientController {
 
     }
     @Operation(summary = "delete client")
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/del/{id}")
     public ResponseEntity deleteClient(@PathVariable Long id) {
         clientService.deleteById(id);
         return ResponseEntity.noContent().build();

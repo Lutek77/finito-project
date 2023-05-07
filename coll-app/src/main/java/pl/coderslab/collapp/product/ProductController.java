@@ -17,12 +17,12 @@ import java.util.List;
 public class ProductController {
 
     private final ProductService productService;
+
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
 // testy napisz
-
 
 
     // documentation
@@ -41,18 +41,19 @@ public class ProductController {
         } else {
             return ResponseEntity.ok(productDTOList);
         }*/
-
+    @Operation(summary = "Find products and last balance",
+            description = "Returns a product")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successful response",
+                    content = @Content(schema = @Schema(implementation = ProductDTO[].class))),
+            @ApiResponse(responseCode = "404", description = "Products cannot be found")
+    })
     @GetMapping("/single/{id}")
-    public ResponseEntity<ProductDTO> getProduct (@PathVariable Long id){
-        ProductDTO productDTO= productService.getByIdWithLastDate(id);
+    public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) {
+        ProductDTO productDTO = productService.getByIdWithLastDate(id);
         return productDTO != null
                 ? ResponseEntity.ok(productDTO)
                 : ResponseEntity.notFound().build();
     }
-
-
-
-
-
 
 }

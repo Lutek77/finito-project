@@ -22,17 +22,16 @@ public class ProductService {
     // CREATE
     public ProductDTO addProduct(ProductDTO productDTO) {
         Product product = productMapper.mapToEntity(productDTO);
-        Assert.isNull(product.getId(), "not null");
+        Assert.isNull(product.getId(), "id must be null");
         productRepository.save(product);
         return productMapper.mapToDTO(product);
     }
-    // READ product/ products
+    // READ
 
     public ProductDTO getByIdWithLastDate (Long id){
             return  productMapper.mapToDTO(
-                    productRepository.findByAgreementAndDetail_ReportingDate(id)
+                    productRepository.findProductByIdAndDetail_ReportingDate(id)
                             .orElse(null));
-        // return productMapper.mapToDTO(productRepository.findById(id).orElse(null));
     }
 
 
