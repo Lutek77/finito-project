@@ -4,14 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pl.coderslab.collapp.balance.Balance;
-import pl.coderslab.collapp.client.Client;
+import pl.coderslab.collapp.detail.Detail;
 import pl.coderslab.collapp.type.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Entity
 @Getter
@@ -33,18 +30,19 @@ public class Product {
     private String iban;
 
     // relation
-    @NotBlank
+ /*   @NotBlank
     @ManyToOne
-    private Client client;
+    private Client client;*/
 
     @NotBlank
     @OneToOne // one direction
-    @JoinColumn(name = "balance_id")
-    private Balance balance;
-    @NotBlank
-    @OneToOne
-    private Type type;
+    @JoinColumn(name = "agreement_id")
+    private Detail detail;
 
+    @NotBlank
+    @OneToOne // one direction
+    @JoinColumn(name = "type_id")
+    private Type type;
 
 }
 

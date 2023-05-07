@@ -9,6 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.pl.PESEL;
 import pl.coderslab.collapp.product.ProductDTO;
+import pl.coderslab.collapp.type.TypeDTO;
 
 
 import javax.persistence.Id;
@@ -17,7 +18,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@JsonIgnoreProperties({"productDTOList"})
+//@JsonIgnoreProperties({"productDTOList"})
 @JsonPropertyOrder({"id", "firstName", "lastName", "address", "email", "phone number"})
 public class ClientDTO {
 
@@ -40,7 +41,8 @@ public class ClientDTO {
     @Schema(description = "phone number")
     private int phoneNumber;
 
-    private List<ProductDTO> productDTOList;
+/*    private List<ProductDTO> productDTOList;*/
+
 
 
 }

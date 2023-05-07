@@ -26,7 +26,7 @@ public class ProductController {
 
 
     // documentation
-    @Operation(summary = "Find all client's products by client_id",
+/*    @Operation(summary = "Find all client's products by client_id",
             description = "Returns a list of products")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful response",
@@ -34,14 +34,22 @@ public class ProductController {
             @ApiResponse(responseCode = "404", description = "Products cannot be found")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<List<ProductDTO>> getAllProductsByClientId(@PathVariable Long id) {
+    public ResponseEntity<List<ProductDTO>> getAllClientsProducts(@PathVariable Long id) {
         List<ProductDTO> productDTOList = productService.getAllClientsProducts(id);
         if (productDTOList.isEmpty()) {
             return ResponseEntity.notFound().build();
         } else {
             return ResponseEntity.ok(productDTOList);
-        }
+        }*/
+
+    @GetMapping("/single/{id}")
+    public ResponseEntity<ProductDTO> getProduct (@PathVariable Long id){
+        ProductDTO productDTO= productService.getByIdWithLastDate(id);
+        return productDTO != null
+                ? ResponseEntity.ok(productDTO)
+                : ResponseEntity.notFound().build();
     }
+
 
 
 

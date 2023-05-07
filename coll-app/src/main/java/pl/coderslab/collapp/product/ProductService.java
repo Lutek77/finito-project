@@ -28,11 +28,11 @@ public class ProductService {
     }
     // READ product/ products
 
-    public ProductDTO getById (Long id){
-        return productMapper.mapToDTO(productRepository.findById(id).orElse(null));
-    }
-    public List<ProductDTO> getAllClientsProducts(Long id){
-        return productMapper.mapToDTO(productRepository.findAllByClient_Id(id));
+    public ProductDTO getByIdWithLastDate (Long id){
+            return  productMapper.mapToDTO(
+                    productRepository.findByAgreementAndDetail_ReportingDate(id)
+                            .orElse(null));
+        // return productMapper.mapToDTO(productRepository.findById(id).orElse(null));
     }
 
 

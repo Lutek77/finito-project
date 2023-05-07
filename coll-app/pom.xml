@@ -65,6 +65,13 @@
 			<artifactId>mapstruct</artifactId>
 			<version>${org.mapstruct.version}</version>
 		</dependency>
+		<!--@JsonFormat-->
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+			<version>2.9.0.pr2</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.coderslab.collapp.product.Product;
 import pl.coderslab.collapp.product.ProductDTO;
+import pl.coderslab.collapp.type.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -43,10 +44,11 @@ public class Client {
 
 
     // relation
+/*
     @NotNull
-//    @OneToMany
-//    @JoinColumn(name="id_product")
     @OneToMany(mappedBy = "client")
     private List<Product> productList = new ArrayList<>();
+*/
+
 
 }
