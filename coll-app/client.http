@@ -1,0 +1,27 @@
+### CREATE
+POST http://localhost:8080/api/clients/
+Content-Type: application/json
+
+{
+  "firstName": "Pat",
+  "lastName": "Stachera",
+  "pesel" : "77093004637",
+  "email" : "ps@op.pl",
+  "address" : "Warszawa",
+  "phoneNumber" : 609807780
+
+}
+### READ
+GET http://localhost:8080/api/clients/1
+
+### UPDATE
+PUT http://localhost:8080/api/clients/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "address" : "Wilno"
+}
+
+### DELETE
+DELETE http://localhost:8080/api/clients/11

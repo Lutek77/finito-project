@@ -1,0 +1,60 @@
+package pl.coderslab.collapp.product;
+
+import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
+import pl.coderslab.collapp.exception.IdMismatchException;
+import pl.coderslab.collapp.exception.ResourceNotFoundException;
+
+import java.util.List;
+
+@Service
+public class ProductService {
+
+    private  final  ProductRepository productRepository;
+    private final ProductMapper productMapper;
+
+
+    public ProductService(ProductRepository productRepository, ProductMapper productMapper) {
+        this.productRepository = productRepository;
+        this.productMapper = productMapper;
+    }
+
+    // CREATE
+    public ProductDTO addProduct(ProductDTO productDTO) {
+        Product product = productMapper.mapToEntity(productDTO);
+        Assert.isNull(product.getId(), "not null");
+        productRepository.save(product);
+        return productMapper.mapToDTO(product);
+    }
+    // READ product/ products
+
+    public ProductDTO getById (Long id){
+        return productMapper.mapToDTO(productRepository.findById(id).orElse(null));
+    }
+    public List<ProductDTO> getAllClientsProducts(Long id){
+        return productMapper.mapToDTO(productRepository.findAllByClient_Id(id));
+    }
+
+
+    // UPDATE
+    public ProductDTO updateMovie(Long id, ProductDTO productDTO) {
+        Assert.notNull(productDTO.getId(), "cannot be empty");
+        if (!productDTO.getId().equals(id)) {
+            throw new IdMismatchException("Id's mismatch");
+        }
+        if (!productRepository.existsById(id)) {
+             throw new ResourceNotFoundException("Product doesn't exist");
+        }
+        Product product  = productMapper.mapToEntity(productDTO);
+        productRepository.save(product);
+        return  productMapper.mapToDTO(product);
+    }
+
+    // DELETE
+    public void deleteById(Long id) {
+        productRepository.deleteById(id);
+    }
+
+
+
+}
