@@ -18,9 +18,6 @@ public class DetailDTO {
     @Id
     private Long id;
     @NotBlank
-    @JsonIgnore
-    private int agreement_id;
-    @NotBlank
     @JsonProperty("account's balance") // name of field in Json
     private double accountBalance;
 

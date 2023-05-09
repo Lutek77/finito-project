@@ -19,7 +19,6 @@ public class Detail {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        private int agreement_id;
         @Schema(description = "balance")
         private double accountBalance;
         @Schema(description = "day past due")

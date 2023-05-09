@@ -33,18 +33,11 @@ public class Product {
     // relation
 
     @NotBlank
-    @OneToOne // one direction
-    @JoinColumn(name = "agreement_id")
+    @OneToOne
     private Detail detail;
 
     @NotBlank
-    @OneToMany// one direction
-    @JoinColumn(name = "agreement_id")
-    private List<Detail> detailList;
-
-    @NotBlank
-    @OneToOne // one direction
-    @JoinColumn(name = "type_id")
+    @OneToOne
     private Type type;
 
 }

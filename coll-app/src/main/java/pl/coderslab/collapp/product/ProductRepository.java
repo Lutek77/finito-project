@@ -16,12 +16,12 @@ public interface ProductRepository extends JpaRepository <Product, Long> {
             ")")*/
 
 
-    @Query(value = "select * from products p\n" +
+/*    @Query(value = "select * from products p\n" +
             "         inner join details d  on p.id = d.agreement_id\n" +
             "         where p.id = ?1 and d.reporting_date = " +
             "(select min(reporting_date) from details where agreement_id = ?1)",
             nativeQuery = true)
-    Optional <Product> findProductByIdAndDetail_ReportingDate(Long id);
+    Optional <Product> findProductByIdAndDetail_ReportingDate(Long id);*/
 
 
 

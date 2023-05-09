@@ -40,7 +40,6 @@ public class Client {
     // relation
     @NotBlank
     @OneToMany
-    @JoinColumn(name = "client_id")
     private List<Product> productList = new ArrayList<>();
 
 }
