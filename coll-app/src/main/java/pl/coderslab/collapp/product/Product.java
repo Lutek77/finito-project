@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.coderslab.collapp.client.Client;
 import pl.coderslab.collapp.detail.Detail;
 import pl.coderslab.collapp.type.Type;
 
@@ -32,9 +33,14 @@ public class Product {
 
     // relation
 
+    /*
+        @NotBlank
+        @OneToOne
+        private Detail detail;
+    */
     @NotBlank
-    @OneToOne
-    private Detail detail;
+    @ManyToOne
+    private Client client;
 
     @NotBlank
     @OneToOne
