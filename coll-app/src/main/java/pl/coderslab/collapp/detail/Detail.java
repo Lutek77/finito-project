@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.coderslab.collapp.product.Product;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -25,4 +26,7 @@ public class Detail {
         private short dpd;
         @Schema(description = "date of balance")
         private LocalDate reportingDate;
+
+        @ManyToOne
+        private Product product;
 }

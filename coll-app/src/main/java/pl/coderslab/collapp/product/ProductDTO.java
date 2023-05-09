@@ -9,6 +9,8 @@ import lombok.Setter;
 import pl.coderslab.collapp.detail.DetailDTO;
 import pl.coderslab.collapp.type.TypeDTO;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -24,6 +26,8 @@ public class ProductDTO {
     private String iban;
 
 /*    private DetailDTO detail;*/
+
+    private List<DetailDTO> detailList;
     private TypeDTO type;
 
 
