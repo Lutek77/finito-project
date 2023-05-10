@@ -3,12 +3,12 @@ POST http://localhost:8080/api/clients/create
 Content-Type: application/json
 
 {
-  "firstName": "Pat",
-  "lastName": "Stachera",
-  "pesel" : "77093004637",
-  "email" : "ps@op.pl",
+  "firstName": "Test",
+  "lastName": "Testowy",
+  "pesel" : "77093012345",
+  "email" : "..@op.pl",
   "address" : "Warszawa",
-  "phoneNumber" : 609807780
+  "phoneNumber" : 600800780
 
 }
 ### READ

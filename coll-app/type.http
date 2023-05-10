@@ -3,9 +3,9 @@ POST http://localhost:8080//api/types
 Content-Type: application/json
 
 {
-  "productType": "P1",
-  "productName": "Name1",
-  "creationDate" : "2023-05-07"
+  "productType": "A",
+  "productName": "AAA",
+  "creationDate" : "2023-05-10"
 
 }
 

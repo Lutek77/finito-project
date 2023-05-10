@@ -8,7 +8,7 @@ import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/types")
+@RequestMapping("/api/types")
 public class TypeController {
     private final TypeService typeService;
     private final TypeRepository typeRepository;

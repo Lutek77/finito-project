@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.pl.PESEL;
 import pl.coderslab.collapp.product.Product;
 
 import javax.persistence.*;
@@ -38,7 +39,7 @@ public class Client {
     private Integer phoneNumber;
 
     // relation
-    @NotBlank
+
     @OneToMany(mappedBy = "client")
 /*    @JoinColumn(name="id_client")*/
     private List<Product> productList = new ArrayList<>();
