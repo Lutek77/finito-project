@@ -28,7 +28,7 @@ public class ProductService {
     }
     // READ
 
-    public ProductDTO getById (Long id){
+    public ProductDTO getProductByIdWithDetails (Long id){
             return  productMapper.mapToDTO(
                     productRepository.findById(id)
                             .orElse(null));

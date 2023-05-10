@@ -22,10 +22,11 @@ public class ClientController {
         return ResponseEntity.ok(clientDTO);
     }
 
-    @Operation(summary = "Find client by id with products",  description = "Returns single Client with products")
-    @GetMapping("/{id}")
-    public ResponseEntity <ClientDTO> getById (@PathVariable Long id){
-        ClientDTO client = clientService.getById(id);
+    @Operation(summary = "Find client by id with products and their details",
+            description = "Returns single Client with products and their details")
+    @GetMapping("/{id}/products/details/")
+    public ResponseEntity <ClientDTO> getClientWithProductDetails (@PathVariable Long id){
+        ClientDTO client = clientService.getClientWithProductsAndDetails(id);
         return  client != null ? ResponseEntity.ok(client) : ResponseEntity.notFound().build();
 
     }

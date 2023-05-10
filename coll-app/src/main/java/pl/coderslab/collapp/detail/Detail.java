@@ -27,6 +27,8 @@ public class Detail {
         @Schema(description = "date of balance")
         private LocalDate reportingDate;
 
+        // relations
+        // with product
         @ManyToOne
         private Product product;
 }

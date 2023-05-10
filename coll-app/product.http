@@ -1,6 +1,6 @@
-### read product with balances
-GET http://localhost:8080//api/products/single/1
-### read product with last balance ????????
+### read product with details' hisotry
+GET http://localhost:8080//api/products/details/1
+### read product with last details ????????
 GET http://localhost:8080//api//single/last/bal/1
 
 ### add product ?????

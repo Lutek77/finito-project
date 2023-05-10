@@ -35,9 +35,9 @@ public class ProductController {
                     content = @Content(schema = @Schema(implementation = ProductDTO[].class))),
             @ApiResponse(responseCode = "404", description = "Products cannot be found")
     })
-    @GetMapping("/single/{id}")
+    @GetMapping("/details/{id}")
     public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) {
-        ProductDTO productDTO = productService.getById(id);
+        ProductDTO productDTO = productService.getProductByIdWithDetails(id);
         return productDTO != null
                 ? ResponseEntity.ok(productDTO)
                 : ResponseEntity.notFound().build();

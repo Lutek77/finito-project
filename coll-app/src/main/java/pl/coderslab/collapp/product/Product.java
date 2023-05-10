@@ -18,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "products")
+
 public class Product {
 
     @Id
@@ -31,30 +32,23 @@ public class Product {
     @Column(unique = true, length = 28)
     private String iban;
 
-    // relation
+    // relations
+    // with client
     @ManyToOne
     private Client client;
 
+    // with details
     @OneToMany(mappedBy = "product")
     private List<Detail> detailList;
 
+    // with type
     @OneToOne
     private Type type;
 
 }
-
-
-
-
-
-
-
-
-
-
-
 /*
 @NotNull: a constrained CharSequence, Collection, Map, or Array is valid as long as it's not null, but it can be empty.
 @NotEmpty: a constrained CharSequence, Collection, Map, or Array is valid as long as it's not null, and its size/length is greater than zero.
 @NotBlank: a constrained String is valid as long as it's not null, and the trimmed length is greater than zero.
 */
+

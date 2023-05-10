@@ -39,9 +39,9 @@ public class Client {
     private Integer phoneNumber;
 
     // relation
-
+    // 1. with products
     @OneToMany(mappedBy = "client")
-/*    @JoinColumn(name="id_client")*/
     private List<Product> productList = new ArrayList<>();
+
 
 }

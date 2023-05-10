@@ -11,8 +11,8 @@ Content-Type: application/json
   "phoneNumber" : 600800780
 
 }
-### READ
-GET http://localhost:8080/api/clients/1
+### READ client with products and their details' history
+GET http://localhost:8080/api/clients/1/products/details/
 
 ### UPDATE ????????
 PUT http://localhost:8080/api/clients/update/1

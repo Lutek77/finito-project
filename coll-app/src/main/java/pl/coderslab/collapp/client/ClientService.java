@@ -20,7 +20,7 @@ public class ClientService {
     }
 
     // get client
-    public ClientDTO getById (long id){
+    public ClientDTO getClientWithProductsAndDetails (long id){
         return clientMapper.mapToDTO(clientRepository.findById(id).orElse(null));
 
     }
