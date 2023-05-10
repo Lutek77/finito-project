@@ -11,11 +11,11 @@ import javax.validation.Valid;
 @RequestMapping("/api/types")
 public class TypeController {
     private final TypeService typeService;
-    private final TypeRepository typeRepository;
 
-    public TypeController(TypeService typeService, TypeRepository typeRepository) {
+
+    public TypeController(TypeService typeService) {
         this.typeService = typeService;
-        this.typeRepository = typeRepository;
+
     }
 
     // add
