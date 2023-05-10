@@ -16,5 +16,6 @@ Content-Type: application/json
 {
   "id": 5,
   "productType": "P1",
-  "productName": "Name1"
+  "productName": "Name1",
+  "creationDate" : "2023-05-10"
 }

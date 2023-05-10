@@ -20,6 +20,7 @@ public class TypeDTO {
     @JsonValue // representation of object in Json
     private String productName;
     @Schema(description = "add date", example = "2023-05-01")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate creationDate;
 
 

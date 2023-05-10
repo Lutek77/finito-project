@@ -31,7 +31,7 @@ public class ClientDTO {
     @Schema(description = "surname")
     private String lastName;
     @Schema(description = "personal identity number")
-
+  /*  @PESEL /// ???? */
     private String pesel;
     @Schema(description = "address")
     private String address;

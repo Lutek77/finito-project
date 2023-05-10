@@ -32,16 +32,12 @@ public class Product {
     private String iban;
 
     // relation
-    @NotBlank
     @ManyToOne
     private Client client;
 
-    @NotBlank
     @OneToMany(mappedBy = "product")
     private List<Detail> detailList;
 
-
-    @NotBlank
     @OneToOne
     private Type type;
 

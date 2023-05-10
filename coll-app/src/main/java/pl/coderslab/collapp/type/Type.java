@@ -25,7 +25,7 @@ public class Type {
     private String productType;
     @NotBlank
     private String productName;
-    @NotBlank
+
     private LocalDate creationDate;
 
 }
