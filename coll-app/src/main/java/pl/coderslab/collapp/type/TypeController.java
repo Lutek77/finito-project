@@ -29,7 +29,7 @@ public class TypeController {
     // update
     @Operation(summary = "update type")
     @PutMapping("/{id}")
-    public ResponseEntity<TypeDTO> updateType(@PathVariable Long id, @RequestBody TypeDTO type) {
+    public ResponseEntity<TypeDTO> updateType(@PathVariable Long id, @Valid @RequestBody TypeDTO type) {
         TypeDTO typeDTO = typeService.updateById(id, type);
         return ResponseEntity.ok(typeDTO);
     }
