@@ -30,8 +30,6 @@ public class ProductDTO {
     private TypeDTO type;
 
 
-    // Test
-    private DetailDTO detail;
 
 
 }

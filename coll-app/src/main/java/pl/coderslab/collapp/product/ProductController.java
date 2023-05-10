@@ -45,6 +45,7 @@ public class ProductController {
 
 
     // Test
+/*
 
     @GetMapping("/single/last/bal/{id}")
     public ResponseEntity<ProductDTO> getProductWithLastBal(@PathVariable Long id) {
@@ -53,6 +54,7 @@ public class ProductController {
                 ? ResponseEntity.ok(productDTO)
                 : ResponseEntity.notFound().build();
     }
+*/
 
     @Operation(summary = "Add new product", description = "add product to database")
     @PostMapping("/create")

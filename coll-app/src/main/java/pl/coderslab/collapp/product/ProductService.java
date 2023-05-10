@@ -34,12 +34,12 @@ public class ProductService {
                             .orElse(null));
     }
 
-    // Test
+/*    // Test
     public ProductDTO getByIdWithLastBalance (Long id){
         return  productMapper.mapToDTO(
                 productRepository.findById(id)
                         .orElse(null));
-    }
+    }*/
 
     // UPDATE
     public ProductDTO updateMovie(Long id, ProductDTO productDTO) {
