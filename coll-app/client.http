@@ -14,12 +14,15 @@ Content-Type: application/json
 ### READ client with products and their details' history
 GET http://localhost:8080/api/clients/1/products/details/
 
-### UPDATE ????????
-PUT http://localhost:8080/api/clients/update/1
+### READ only data client
+GET http://localhost:8080/api/clients/1
+
+### UPDATE ????
+PUT http://localhost:8080/api/clients/update/6
 Content-Type: application/json
 
 {
-  "id": 1,
+  "id": 6,
   "firstName": "Test",
   "lastName": "Testowy",
   "pesel" : "77093012345",

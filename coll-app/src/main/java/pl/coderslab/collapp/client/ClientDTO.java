@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 //@JsonIgnoreProperties({"productDTOList"})
 @JsonPropertyOrder({"id", "firstName", "lastName", "pesel", "phoneNumber",
-        "address", "email", "phone number", "productList"})
+        "address", "email", "productList"})
 public class ClientDTO {
 
 

@@ -11,4 +11,5 @@ public interface ClientMapper {
     ClientDTO mapToDTO (Client client);
     List<ClientDTO> mapToDTO (List<Client> clientList);
     Client mapToEntity (ClientDTO clientDTO) ;
+
 }
