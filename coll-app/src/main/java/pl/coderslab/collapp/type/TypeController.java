@@ -19,9 +19,9 @@ public class TypeController {
     }
 
     // add
-    @Operation(summary = "update type")
+    @Operation(summary = "add type")
     @PostMapping
-    public ResponseEntity<TypeDTO> addClient(@RequestBody @Valid TypeDTO type) {
+    public ResponseEntity<TypeDTO> addType(@RequestBody @Valid TypeDTO type) {
         TypeDTO typeDTO = typeService.addType(type);
         return ResponseEntity.ok(typeDTO);
     }
