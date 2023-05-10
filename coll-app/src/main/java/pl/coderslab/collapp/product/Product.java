@@ -42,10 +42,8 @@ public class Product {
     private Type type;
 
     // Test
-/*
     @OneToOne
     private Detail detail;
-*/
 
 }
 

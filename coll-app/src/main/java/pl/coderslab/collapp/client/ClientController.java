@@ -22,7 +22,7 @@ public class ClientController {
         return ResponseEntity.ok(clientDTO);
     }
 
-    @Operation(summary = "Find client by id with products",  description = "Returns single Client")
+    @Operation(summary = "Find client by id with products",  description = "Returns single Client with products")
     @GetMapping("/{id}")
     public ResponseEntity <ClientDTO> getById (@PathVariable Long id){
         ClientDTO client = clientService.getById(id);

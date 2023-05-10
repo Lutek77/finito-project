@@ -31,7 +31,7 @@ public class ProductDTO {
 
 
     // Test
-/*    private DetailDTO detail;*/
+    private DetailDTO detail;
 
 
 }

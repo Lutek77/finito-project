@@ -7,7 +7,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import net.bytebuddy.build.Plugin;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
+import pl.coderslab.collapp.client.ClientDTO;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -43,13 +45,28 @@ public class ProductController {
 
 
     // Test
-    @Operation(summary = "Find product with last balance")
+
     @GetMapping("/single/last/bal/{id}")
     public ResponseEntity<ProductDTO> getProductWithLastBal(@PathVariable Long id) {
         ProductDTO productDTO = productService.getByIdWithLastBalance(id);
         return productDTO != null
                 ? ResponseEntity.ok(productDTO)
                 : ResponseEntity.notFound().build();
+    }
+
+    @Operation(summary = "Add new product", description = "add product to database")
+    @PostMapping("/create")
+    public ResponseEntity<ProductDTO> addProduct (@Valid @RequestBody ProductDTO product) {
+        ProductDTO productDTO = productService.addProduct(product);
+        return ResponseEntity.ok(productDTO);
+
+    }
+
+    @Operation(summary = "delete product")
+    @DeleteMapping("/del/{id}")
+    public ResponseEntity deleteProduct(@PathVariable Long id) {
+        productService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
 
