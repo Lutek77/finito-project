@@ -6,7 +6,7 @@ Content-Type: application/json
   "firstName": "Test",
   "lastName": "Testowy",
   "pesel" : "77093012345",
-  "email" : "..@op.pl",
+  "email" : "tt@op.pl",
   "address" : "Warszawa",
   "phoneNumber" : 600800780
 
@@ -20,8 +20,13 @@ Content-Type: application/json
 
 {
   "id": 1,
-  "address" : "Wilno"
+  "firstName": "Test",
+  "lastName": "Testowy",
+  "pesel" : "77093012345",
+  "email" : "tt@op.pl",
+  "address" : "Czikago",
+  "phoneNumber" : 600800780
 }
 
 ### DELETE
-DELETE http://localhost:8080/api/clients/del/2
+DELETE http://localhost:8080/api/clients/del/5

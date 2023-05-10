@@ -26,7 +26,7 @@ public class ProductController {
 
 
     // documentation
-    @Operation(summary = "Find products with balance",
+    @Operation(summary = "Find product with balance",
             description = "Returns a product")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successful response",
@@ -40,5 +40,17 @@ public class ProductController {
                 ? ResponseEntity.ok(productDTO)
                 : ResponseEntity.notFound().build();
     }
+
+
+    // Test
+    @Operation(summary = "Find product with last balance")
+    @GetMapping("/single/last/bal/{id}")
+    public ResponseEntity<ProductDTO> getProductWithLastBal(@PathVariable Long id) {
+        ProductDTO productDTO = productService.getByIdWithLastBalance(id);
+        return productDTO != null
+                ? ResponseEntity.ok(productDTO)
+                : ResponseEntity.notFound().build();
+    }
+
 
 }
