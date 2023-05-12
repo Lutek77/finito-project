@@ -21,6 +21,8 @@ public class ClientService {
         this.clientMapperTwo = clientMapperTwo;
     }
 
+
+
     // get client with products and their details
     public ClientDTO getClientWithProductsAndDetails (long id){
         return clientMapper.mapToDTO(clientRepository.findById(id).orElse(null));
