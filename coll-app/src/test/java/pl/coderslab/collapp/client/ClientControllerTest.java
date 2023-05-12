@@ -23,7 +23,6 @@ class ClientControllerTest {
     private MockMvc mockMvc;
     @MockBean
     private ClientService clientService;
-
     private final ObjectMapper objectMapper = new ObjectMapper();
 
 

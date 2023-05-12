@@ -9,6 +9,7 @@ import pl.coderslab.collapp.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,15 +22,15 @@ class ClientRepositoryTest {
 
     ///@Sql(scripts = "classpath:data.sql")
     @Test
-    void findFirstByFirstName() {
-        // given - create and add
-        List<Product> productList = new ArrayList<>();
-        Client client = new Client(100L, "Ala", "Kot", "79010112345", "Otwock", "ala@wp.pl", 609100890 ,productList );
+    void find_by_client_id() {
+        // given - find
+        ClientDTOTwo client = new ClientDTOTwo(100L, "Ala", "Kot",
+                "79010112345", "Otwock", "ala@wp.pl", 609100890 );
         testEntityManager.persistAndFlush(client);
         // when - find in database
-        Client result = clientRepository.findFirstByFirstName("Wiesław");
+        Optional<Client> result = clientRepository.findById(100L);
         // then - equals
-        assertEquals(client.getFirstName(), result.getFirstName());
+        assertEquals(client.getId(), result.get());
 
     }
 }

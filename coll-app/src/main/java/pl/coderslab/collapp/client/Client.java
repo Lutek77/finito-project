@@ -42,8 +42,8 @@ public class Client {
 
 
 
-
     // for tests
-
+    public Client(long id, String name, String surname, String pesel, String address, String email, int phoneNumber) {
+    }
 
 }

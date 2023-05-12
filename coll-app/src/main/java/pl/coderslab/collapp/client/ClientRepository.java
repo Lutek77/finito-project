@@ -18,10 +18,6 @@ public interface ClientRepository extends JpaRepository <Client, Long> {
     int deleteClientsById (Long id);
 
 
-    // for tests
-    Client findFirstByFirstName(String name);
-
-
 
 
 
