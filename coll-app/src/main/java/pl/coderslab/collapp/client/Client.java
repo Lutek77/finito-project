@@ -1,10 +1,6 @@
 package pl.coderslab.collapp.client;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.hibernate.validator.constraints.pl.PESEL;
+import lombok.*;
 import pl.coderslab.collapp.product.Product;
 
 import javax.persistence.*;
@@ -42,6 +38,12 @@ public class Client {
     // 1. with products
     @OneToMany(mappedBy = "client")
     private List<Product> productList = new ArrayList<>();
+
+
+
+
+
+    // for tests
 
 
 }

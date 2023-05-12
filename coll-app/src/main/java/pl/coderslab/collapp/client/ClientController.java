@@ -32,7 +32,7 @@ public class ClientController {
 
     }
 
-    @Operation(summary = "Find only data's client", description = "Returns single Client with data")
+    @Operation(summary = "Find client by Id", description = "Returns single Client")
     @GetMapping("/{id}")
     public ResponseEntity<ClientDTOTwo> getClientByID(@PathVariable Long id) {
         ClientDTOTwo client = clientService.getClientById(id);
@@ -41,7 +41,7 @@ public class ClientController {
 
     @Operation(summary = "update client")
     @PutMapping("/update/{id}")
-    public ResponseEntity<ClientDTOTwo> updateClient(@PathVariable Long id, @RequestBody @Valid ClientDTOTwo client) {
+    public ResponseEntity<ClientDTOTwo> updateClientById(@PathVariable Long id, @RequestBody @Valid ClientDTOTwo client) {
         ClientDTOTwo clientDTOTwo = clientService.updateClient(id, client);
         return ResponseEntity.ok(clientDTOTwo);
 
@@ -50,7 +50,7 @@ public class ClientController {
 
     @Operation(summary = "delete client")
     @DeleteMapping("/del/{id}")
-    public ResponseEntity deleteClient(@PathVariable Long id) {
+    public ResponseEntity deleteClientById(@PathVariable Long id) {
         clientService.deleteById(id);
         return ResponseEntity.noContent().build();
     }

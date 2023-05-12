@@ -5,6 +5,8 @@ import org.springframework.util.Assert;
 import pl.coderslab.collapp.exception.IdMismatchException;
 import pl.coderslab.collapp.exception.ResourceNotFoundException;
 
+import java.util.List;
+
 @Service
 public class ClientService {
 
@@ -61,6 +63,9 @@ public class ClientService {
         clientRepository.deleteById(id);
     }
 
+
+
+    // for test
 
 
 
