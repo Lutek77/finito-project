@@ -17,7 +17,7 @@ GET http://localhost:8080/api/clients/1/products/details/
 ### READ only data client
 GET http://localhost:8080/api/clients/1
 
-### UPDATE ????
+### UPDATE
 PUT http://localhost:8080/api/clients/update/6
 Content-Type: application/json
 
@@ -27,7 +27,7 @@ Content-Type: application/json
   "lastName": "Testowy",
   "pesel" : "77093012345",
   "email" : "tt@op.pl",
-  "address" : "Czikago",
+  "address" : "CHICAGO",
   "phoneNumber" : 600800780
 }
 

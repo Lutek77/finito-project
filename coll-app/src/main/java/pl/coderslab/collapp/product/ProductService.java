@@ -5,18 +5,19 @@ import org.springframework.util.Assert;
 import pl.coderslab.collapp.exception.IdMismatchException;
 import pl.coderslab.collapp.exception.ResourceNotFoundException;
 
-import java.util.List;
-
 @Service
 public class ProductService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
+    private final ProductDetailMapper productDetailMapper;
 
 
-    public ProductService(ProductRepository productRepository, ProductMapper productMapper) {
+    public ProductService(ProductRepository productRepository, ProductMapper productMapper, ProductDetailMapper productDetailMapper) {
         this.productRepository = productRepository;
         this.productMapper = productMapper;
+
+        this.productDetailMapper = productDetailMapper;
     }
 
     // CREATE
@@ -55,8 +56,8 @@ public class ProductService {
     }
 
     // Test
-    public ProductDTO getByIdWithFirstBalance(Long id) {
-        return productMapper.mapToDTO(
+    public ProductDetailDTO getByIdWithFirstBalance(Long id) {
+        return productDetailMapper.mapToDTO(
                 productRepository.findProductByIdWithFirstDetails(id));
     }
 

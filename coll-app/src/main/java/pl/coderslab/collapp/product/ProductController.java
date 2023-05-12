@@ -60,10 +60,10 @@ public class ProductController {
 
     // Test
     @GetMapping("/single/last/bal/{id}")
-    public ResponseEntity<ProductDTO> getProductWithLastBal(@PathVariable Long id) {
-        ProductDTO productDTO = productService.getByIdWithFirstBalance(id);
-        return productDTO != null
-                ? ResponseEntity.ok(productDTO)
+    public ResponseEntity<ProductDetailDTO> getProductWithLastBal(@PathVariable Long id) {
+        ProductDetailDTO dto = productService.getByIdWithFirstBalance(id);
+        return dto != null
+                ? ResponseEntity.ok(dto)
                 : ResponseEntity.notFound().build();
     }
 

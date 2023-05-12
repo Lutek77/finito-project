@@ -1,16 +1,17 @@
 ### read product with details' hisotry
 GET http://localhost:8080//api/products/details/1
-### read product with last details - NOT WORKING
+### read product with last details - NOT WORKING CORRECTLY
 GET http://localhost:8080//api/products/single/last/bal/1
 
-### add product ?????
+### add product - NOT WORKING
 POST http://localhost:8080//api/products/create
 Content-Type: application/json
 
 {
+  "client" : 2,
   "agreement": "CC-2",
-  "iban": "PL78101010230000261395200012"
-
+  "iban": "PL78101010230000261395201112",
+  "type" : 2
 }
 
 ### delete product

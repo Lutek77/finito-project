@@ -17,5 +17,5 @@ Content-Type: application/json
   "id": 5,
   "productType": "CH",
   "productName": "Changed",
-  "creationDate" : "2023-05-10"
+  "creationDate" : "2023-05-12"
 }

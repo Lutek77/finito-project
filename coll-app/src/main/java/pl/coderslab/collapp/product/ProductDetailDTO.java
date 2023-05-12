@@ -15,7 +15,8 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @JsonPropertyOrder({"id", "type", "agreement", "iban", "detail"})
-public class ProductDTO {
+public class ProductDetailDTO {
+
     @JsonProperty("product's ID")
     private Long id;
     @Schema(description = "number of agreement", example = "CC-51301234")
@@ -25,14 +26,10 @@ public class ProductDTO {
     @Schema(description = "account number", example = "29105010501111222251301234")
     private String iban;
 
-
-    private List<DetailDTO> detailList;
     private TypeDTO type;
 
 
     // Test
     private DetailDTO detail;
-
-
 
 }
