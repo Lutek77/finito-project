@@ -43,19 +43,6 @@ public class ProductController {
                 : ResponseEntity.notFound().build();
     }
 
-
-    // Test
-/*
-
-    @GetMapping("/single/last/bal/{id}")
-    public ResponseEntity<ProductDTO> getProductWithLastBal(@PathVariable Long id) {
-        ProductDTO productDTO = productService.getByIdWithLastBalance(id);
-        return productDTO != null
-                ? ResponseEntity.ok(productDTO)
-                : ResponseEntity.notFound().build();
-    }
-*/
-
     @Operation(summary = "Add new product", description = "add product to database")
     @PostMapping("/create")
     public ResponseEntity<ProductDTO> addProduct (@Valid @RequestBody ProductDTO product) {
@@ -71,5 +58,13 @@ public class ProductController {
         return ResponseEntity.noContent().build();
     }
 
+    // Test
+    @GetMapping("/single/last/bal/{id}")
+    public ResponseEntity<ProductDTO> getProductWithLastBal(@PathVariable Long id) {
+        ProductDTO productDTO = productService.getByIdWithFirstBalance(id);
+        return productDTO != null
+                ? ResponseEntity.ok(productDTO)
+                : ResponseEntity.notFound().build();
+    }
 
 }

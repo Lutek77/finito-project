@@ -16,12 +16,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             nativeQuery = true)*/
 
 
-/*    @Query(
+    @Query(
             "Select p from Product p Join fetch p.detail where p.id =?1 " +
             "and p.detail.reportingDate = ( SELECT min(p.detail.reportingDate) " +
             "FROM p.detail where p.detail.product =?1 ) "
             )
-    Product findAllByIdAndDetail_AccountBalance(Long id);*/
+    Product findProductByIdWithFirstDetails (Long id);
 
 
 }

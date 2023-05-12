@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private  final  ProductRepository productRepository;
+    private final ProductRepository productRepository;
     private final ProductMapper productMapper;
 
 
@@ -28,18 +28,12 @@ public class ProductService {
     }
     // READ
 
-    public ProductDTO getProductByIdWithDetails (Long id){
-            return  productMapper.mapToDTO(
-                    productRepository.findById(id)
-                            .orElse(null));
-    }
-
-/*    // Test
-    public ProductDTO getByIdWithLastBalance (Long id){
-        return  productMapper.mapToDTO(
+    public ProductDTO getProductByIdWithDetails(Long id) {
+        return productMapper.mapToDTO(
                 productRepository.findById(id)
                         .orElse(null));
-    }*/
+    }
+
 
     // UPDATE
     public ProductDTO updateMovie(Long id, ProductDTO productDTO) {
@@ -48,11 +42,11 @@ public class ProductService {
             throw new IdMismatchException("Id's mismatch");
         }
         if (!productRepository.existsById(id)) {
-             throw new ResourceNotFoundException("Product doesn't exist");
+            throw new ResourceNotFoundException("Product doesn't exist");
         }
-        Product product  = productMapper.mapToEntity(productDTO);
+        Product product = productMapper.mapToEntity(productDTO);
         productRepository.save(product);
-        return  productMapper.mapToDTO(product);
+        return productMapper.mapToDTO(product);
     }
 
     // DELETE
@@ -60,6 +54,10 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-
+    // Test
+    public ProductDTO getByIdWithFirstBalance(Long id) {
+        return productMapper.mapToDTO(
+                productRepository.findProductByIdWithFirstDetails(id));
+    }
 
 }

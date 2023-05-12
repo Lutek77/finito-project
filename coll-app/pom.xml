@@ -54,6 +54,7 @@
 			<scope>test</scope>
 		</dependency>
 		<!--Swagger-->
+		<!-- http://localhost:8080/swagger-ui/index.html#/ -->
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>

@@ -45,6 +45,15 @@ public class Product {
     @OneToOne
     private Type type;
 
+
+    // Test
+/*    @OneToOne
+    @MapsId
+    @JoinColumn(name = "id")*/
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    private Detail detail;
+
 }
 /*
 @NotNull: a constrained CharSequence, Collection, Map, or Array is valid as long as it's not null, but it can be empty.
