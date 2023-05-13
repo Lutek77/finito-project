@@ -1,9 +1,9 @@
 ### read product with details' hisotry
 GET http://localhost:8080//api/products/details/1
-### read product with last details - NOT WORKING CORRECTLY
-GET http://localhost:8080//api/products/single/last/bal/1
+### read product with last details - ???
+GET http://localhost:8080//api/products/single/last/bal/2
 
-### add product - NOT WORKING
+### add product - ???
 POST http://localhost:8080//api/products/create
 Content-Type: application/json
 
